@@ -37,7 +37,7 @@
         </tr>
     </table><br><br>
     <input type="submit" value="login" />
-    <input type="reset" value="cancel">
+    <input type="reset" value="cancel" />
 </form>
 </body>
 </html>
