@@ -23,12 +23,17 @@
             <td>
                 ユーザーID:
             </td>
-            <td><input type="text" name="users_id"></td>
+            <td>
+                <input type="text" name="users_id">
+            </td>
         </tr>
         <tr>
             <td>
                 パスワード:
-            </td><input type="password" name="users_password"></tr>
+            </td>
+            <td>
+                <input type="password" name="users_password">
+            </td>
         </tr>
     </table><br><br>
     <input type="submit" value="login" />
