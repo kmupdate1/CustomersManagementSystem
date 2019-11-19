@@ -11,16 +11,16 @@ public class SearchCustomerAction {
     public String execute(HttpServletRequest request) {
         String page = "/SearchCustomerView.jsp";
 
-        String customerId = request.getParameter("CUSTOMER_ID");
+        String customerName = request.getParameter("CUSTOMER_NAME");
 
-        if ( customerId != null ) {
+        if ( customerName != null ) {
             request.setAttribute("message", "お客様IDが未入力です。");
             return page;
         }
 
         try {
             SearchCustomerLogic logic = new SearchCustomerLogic();
-            Customer customer = new Customer();
+            Customer customer = logic.searchCustomer(customerName);
 
             request.setAttribute("Customer", customer);
 

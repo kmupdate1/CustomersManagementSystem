@@ -1,5 +1,7 @@
 package Presentation;
 
+import Presentation.Action.SearchCustomerAction;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +24,8 @@ public class FrontControllerServlet extends HttpServlet {
 
         switch ( buttonID ) {
             case "後から決める0":
-                page = "ページのURL0";
+                SearchCustomerAction action = new SearchCustomerAction();
+                page = action.execute(request);
                 break;
 
             case "後から決める1":

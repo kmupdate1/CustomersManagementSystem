@@ -11,7 +11,7 @@ import Integration.DAO.CustomersDAO;
 import Integration.DBConnectionManager;
 
 public class SearchCustomerLogic {
-    public Customer searchCustomer(int customersId) throws SalesBusinessException, SalesSystemException {
+    public Customer searchCustomer(String customersName) throws SalesBusinessException, SalesSystemException {
 
         Connection connection = null;
         Customer customer = null;
@@ -20,7 +20,7 @@ public class SearchCustomerLogic {
             connection = DBConnectionManager.getConnection();
 
             CustomersDAO customersDAO = new CustomersDAO(connection);
-            customer = customersDAO.getCustomer(customersId);
+            customer = customersDAO.getCustomer(customersName);
             if (customer == null) {
                 throw new SalesBusinessException("該当するお客様は、登録されていません。");
             }

@@ -14,15 +14,15 @@ public class CustomersDAO {
         this.connection = connection;
     }
 
-    public Customer getCustomer(int customersId) throws SQLException{
+    public Customer getCustomer(String customersName) throws SQLException{
         ResultSet resultSet = null;
         PreparedStatement statement = null;
         Customer customer = null;
-        String sql = "SELECT * FROM customers WHERE customers_id = ?";
+        String sql = "SELECT * FROM customers WHERE customers_name = ?";
 
         try {
             statement = connection.prepareStatement(sql);
-            statement.setInt(1, customersId);
+            statement.setString(1, customersName);
             resultSet = statement.executeQuery();
 
             customer = new Customer();
@@ -40,6 +40,7 @@ public class CustomersDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            throw e;
         } finally {
             if ( resultSet != null ) {
                 resultSet.close();
