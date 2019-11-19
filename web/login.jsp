@@ -11,13 +11,32 @@
 <html lang="ja">
 <head>
     <title>システムログイン</title>
+    <script type="text/javascript">
+        function PushLoginButton() {
+            var userLoginName = document.inform.userLoginName;
+            if ( userLoginName == "" ) {
+                alert("ログインIDを入力してください。");
+                return false;
+            }
+            var userLoginPassword = document.inform.userLoginPassword;
+            if ( userLoginPassword == "" ) {
+                alert("パスワードを入力してください。");
+                return false;
+            }
+            document.inform.BUTTON_ID.value = "101_01_01";
+            document.inform.submit();
+        }
+    </script>
 </head>
 
 <body>
-    <div style="color: red; font-weight: bold" >
-        <c:out value="${requestScope.error}" />
+    <div align="center">
+        <h1>お客様情報管理システム<br>ログイン画面</h1>
     </div>
-    <form action="/Presentation/FrontControllerServlet" method="post">
+    <div style="color: red; font-weight: bold" align="center" >
+        <form action="/Presentation/FrontControllerServlet" method="post" name="inform">
+        <c:out value="${requestScope.message}" />
+    </div>
         <input type="hidden" name="login_failed_message" value="0" />
     <table>
         <tr>
@@ -37,8 +56,8 @@
             </td>
         </tr>
     </table><br><br>
-    <input type="submit" value="login" />
-    <input type="reset" value="cancel" />
+    <input type="hidden" value="" name="BUTTON_ID"/>
+    <input type="button" value="login" onclick="return PushLoginButton()"/>
 </form>
 </body>
 </html>
