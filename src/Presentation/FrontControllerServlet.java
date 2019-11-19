@@ -38,8 +38,8 @@ public class FrontControllerServlet extends HttpServlet {
                 page = "ページのURL2";
                 break;
 
-            case "後から決める3":
-                page = "ページのURL3";
+            case "901_01_01":
+                page = "/errorView.jsp";
                 break;
         }
 
