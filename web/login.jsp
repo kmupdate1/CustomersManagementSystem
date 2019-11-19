@@ -8,23 +8,24 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
     <title>システムログイン</title>
 </head>
+
 <body>
-<div style="color: red; font-weight: bold" >
-    <c:out value="${requestScope.error}" />
-</div>
-<form action="/????" method="post">
-    <input type="hidden" name="users_id" value="0">
+    <div style="color: red; font-weight: bold" >
+        <c:out value="${requestScope.error}" />
+    </div>
+    <form action="/Presentation/Action/UserLoginAction" method="post">
+        <input type="hidden" name="login_failed_message" value="0">
     <table>
         <tr>
             <td>
                 ユーザーID:
             </td>
             <td>
-                <input type="text" name="users_id">
+                <input type="text" name="users_login_name">
             </td>
         </tr>
         <tr>
@@ -32,7 +33,7 @@
                 パスワード:
             </td>
             <td>
-                <input type="password" name="users_password">
+                <input type="password" name="users_login_password">
             </td>
         </tr>
     </table><br><br>

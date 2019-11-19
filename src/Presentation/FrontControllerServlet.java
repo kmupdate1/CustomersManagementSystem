@@ -24,12 +24,13 @@ public class FrontControllerServlet extends HttpServlet {
 
         switch ( buttonID ) {
             case "後から決める0":
-                SearchCustomerAction action = new SearchCustomerAction();
-                page = action.execute(request);
+                SearchCustomerAction searchCustomerAction = new SearchCustomerAction();
+                page = searchCustomerAction.execute(request);
                 break;
 
             case "後から決める1":
-                page = "ページのURL1";
+                //SearchCustomerAction searchCustomerAction = new SearchCustomerAction();
+                //page = ;
                 break;
 
             case "後から決める2":

@@ -10,21 +10,23 @@ import java.sql.SQLException;
 public class UsersDAO {
     private Connection connection;
 
-    private UsersDAO(Connection connection) {
+    public UsersDAO(Connection connection) {
         this.connection = connection;
     }
 
-    public Users findUsers(int usersId) throws SQLException {
-        String sql = "SELECT * FROM users WHERE users_id = ?";
+    public Users findUsers(String usersLoginName, String usersLoginPassword) throws SQLException {
+        String sql = "SELECT * FROM users WHERE users_login_name = ? AND users_login_password = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         Users users = null;
 
         try {
             statement = connection.prepareStatement(sql);
-            statement.setInt(1, usersId);
+            statement.setString(1, usersLoginName);
+            statement.setString(2, usersLoginPassword);
             resultSet = statement.executeQuery();
 
+            //ここ分からんからちょっと保留
             while ( resultSet.next() ) {
                 users = new Users();
                 users.setUsersId(resultSet.getInt(1));
