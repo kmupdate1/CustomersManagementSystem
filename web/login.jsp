@@ -17,7 +17,7 @@
     <div style="color: red; font-weight: bold" >
         <c:out value="${requestScope.error}" />
     </div>
-    <form action="/Presentation/Action/UserLoginAction" method="post">
+    <form action="/Presentation/FrontControllerServlet" method="post">
         <input type="hidden" name="login_failed_message" value="0" />
     <table>
         <tr>
