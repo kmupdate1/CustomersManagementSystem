@@ -1,6 +1,7 @@
 package Presentation;
 
 import Presentation.Action.SearchCustomerAction;
+import Presentation.Action.UserLoginAction;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,7 +20,7 @@ public class FrontControllerServlet extends HttpServlet {
         String buttonID = request.getParameter("BUTTON_ID");
 
         if ( buttonID == null ) {
-            buttonID = "後から決める";
+            buttonID = "101_01_01";
         }
 
         switch ( buttonID ) {
@@ -28,9 +29,9 @@ public class FrontControllerServlet extends HttpServlet {
                 page = searchCustomerAction.execute(request);
                 break;
 
-            case "後から決める1":
-                //SearchCustomerAction searchCustomerAction = new SearchCustomerAction();
-                //page = ;
+            case "101_01_01":
+                UserLoginAction userLoginAction = new UserLoginAction();
+                page = userLoginAction.execute(request);
                 break;
 
             case "後から決める2":

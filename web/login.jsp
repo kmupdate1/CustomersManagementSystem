@@ -37,14 +37,14 @@
         <form action="/Presentation/FrontControllerServlet" method="post" name="inform">
         <c:out value="${requestScope.message}" />
     </div>
-        <input type="hidden" name="login_failed_message" value="0" />
+        <input type="hidden" name="message" value="0" />
     <table>
         <tr>
             <td>
                 ユーザーID:
             </td>
             <td>
-                <input type="text" name="users_login_name" />
+                <input type="text" name="usersLoginName">
             </td>
         </tr>
         <tr>
@@ -52,7 +52,7 @@
                 パスワード:
             </td>
             <td>
-                <input type="password" name="users_login_password" />
+                <input type="password" name="usersLoginPassword">
             </td>
         </tr>
     </table><br><br>
