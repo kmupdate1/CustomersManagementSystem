@@ -23,7 +23,7 @@
                 alert("パスワードを入力してください。");
                 return false;
             }
-            document.inform.BUTTON_ID.value = "101_01_01";
+            document.inform.BUTTON_ID.value = '101_01_01';
             document.inform.submit();
         }
     </script>
@@ -44,7 +44,7 @@
                 ユーザーID:
             </td>
             <td>
-                <input type="text" name="usersLoginName">
+                <input type="text" name="userLoginName">
             </td>
         </tr>
         <tr>
@@ -52,7 +52,7 @@
                 パスワード:
             </td>
             <td>
-                <input type="password" name="usersLoginPassword">
+                <input type="password" name="userLoginPassword">
             </td>
         </tr>
     </table><br><br>

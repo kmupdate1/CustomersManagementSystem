@@ -21,7 +21,7 @@ public class UserLoginAction {
         try {
             LoginLogic loginLogic = new LoginLogic();
             Users users = loginLogic.login(userLoginName, userLoginPassword);
-            request.setAttribute("users", users);
+            request.setAttribute("usersName", users);
             page = "/loginResult.jsp";
         } catch (SalesBusinessException e) {
             e.printStackTrace();
