@@ -13,13 +13,13 @@
     <title>システムログイン</title>
     <script type="text/javascript">
         function PushLoginButton() {
-            var userLoginName = document.inform.userLoginName;
-            if ( userLoginName == "" ) {
+            var usersLoginName = document.inform.usersLoginName;
+            if ( usersLoginName == "" ) {
                 alert("ログインIDを入力してください。");
                 return false;
             }
-            var userLoginPassword = document.inform.userLoginPassword;
-            if ( userLoginPassword == "" ) {
+            var usersLoginPassword = document.inform.usersLoginPassword;
+            if ( usersLoginPassword == "" ) {
                 alert("パスワードを入力してください。");
                 return false;
             }
@@ -44,7 +44,7 @@
                 ユーザーID:
             </td>
             <td>
-                <input type="text" name="userLoginName">
+                <input type="text" name="usersLoginName">
             </td>
         </tr>
         <tr>
@@ -52,7 +52,7 @@
                 パスワード:
             </td>
             <td>
-                <input type="password" name="userLoginPassword">
+                <input type="password" name="usersLoginPassword">
             </td>
         </tr>
     </table><br><br>

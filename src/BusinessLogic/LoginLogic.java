@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class LoginLogic {
-    public Users login(String userLoginName, String userLoginPassword) throws SalesBusinessException, SalesSystemException {
+    public Users login(String usersLoginName, String usersLoginPassword) throws SalesBusinessException, SalesSystemException {
         Connection connection = null;
         Users users = null;
 
@@ -18,7 +18,7 @@ public class LoginLogic {
             connection = DBConnectionManager.getConnection();
 
             UsersDAO usersDAO = new UsersDAO(connection);
-            users = usersDAO.findUsers(userLoginName, userLoginPassword);
+            users = usersDAO.findUsers(usersLoginName, usersLoginPassword);
 
             if ( users == null ) {
                 throw new SalesBusinessException("入力したユーザ情報が存在しません。");

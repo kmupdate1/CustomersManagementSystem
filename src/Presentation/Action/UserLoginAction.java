@@ -10,17 +10,17 @@ public class UserLoginAction {
     public String execute(HttpServletRequest request) {
         String page = "/login.jsp";
 
-        String userLoginName = request.getParameter("userLoginName");
-        String userLoginPassword = request.getParameter("userLoginPassword");
+        String usersLoginName = request.getParameter("usersLoginName");
+        String usersLoginPassword = request.getParameter("usersLoginPassword");
 
-        if ( userLoginName.equals("") || userLoginPassword.equals("") ) {
+        if ( usersLoginName.equals("") || usersLoginPassword.equals("") ) {
             request.setAttribute("message", "ログインIDまたはパスワードが間違っています。");
             return page;
         }
 
         try {
             LoginLogic loginLogic = new LoginLogic();
-            Users users = loginLogic.login(userLoginName, userLoginPassword);
+            Users users = loginLogic.login(usersLoginName, usersLoginPassword);
             request.setAttribute("usersName", users);
             page = "/loginResult.jsp";
         } catch (SalesBusinessException e) {
