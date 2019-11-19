@@ -5,12 +5,13 @@ import Entity.Customer;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import Exception.SalesBusinessException;
 import Exception.SalesSystemException;
 import Integration.DAO.CustomersDAO;
 import Integration.DBConnectionManager;
 
 public class SearchCustomerLogic {
-    public Customer searchCustomer(int customersId) throws SalesSystemException {
+    public Customer searchCustomer(int customersId) throws SalesBusinessException, SalesSystemException {
 
         Connection connection = null;
         Customer customer = null;
@@ -21,7 +22,7 @@ public class SearchCustomerLogic {
             CustomersDAO customersDAO = new CustomersDAO(connection);
             customer = customersDAO.getCustomer(customersId);
             if (customer == null) {
-                throw new SalesSystemException("該当するお客様は、登録されていません。");
+                throw new SalesBusinessException("該当するお客様は、登録されていません。");
             }
         }catch (SQLException e) {
             e.printStackTrace();
