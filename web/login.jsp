@@ -18,14 +18,14 @@
         <c:out value="${requestScope.error}" />
     </div>
     <form action="/Presentation/Action/UserLoginAction" method="post">
-        <input type="hidden" name="login_failed_message" value="0">
+        <input type="hidden" name="login_failed_message" value="0" />
     <table>
         <tr>
             <td>
                 ユーザーID:
             </td>
             <td>
-                <input type="text" name="users_login_name">
+                <input type="text" name="users_login_name" />
             </td>
         </tr>
         <tr>
@@ -33,7 +33,7 @@
                 パスワード:
             </td>
             <td>
-                <input type="password" name="users_login_password">
+                <input type="password" name="users_login_password" />
             </td>
         </tr>
     </table><br><br>
