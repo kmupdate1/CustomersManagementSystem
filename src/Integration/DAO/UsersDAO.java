@@ -25,7 +25,7 @@ public class UsersDAO {
             statement.setInt(1, usersId);
             resultSet = statement.executeQuery();
 
-            if ( resultSet.next() ) {
+            while ( resultSet.next() ) {
                 users = new Users();
                 users.setUsersId(resultSet.getInt(1));
                 users.setUsersLoginName(resultSet.getString(2));
