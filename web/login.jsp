@@ -12,14 +12,17 @@
 <head>
     <title>システムログイン</title>
     <script type="text/javascript">
+        /**
+         * @return {boolean}
+         */
         function PushLoginButton() {
             var usersLoginName = document.inform.usersLoginName;
-            if ( usersLoginName == "" ) {
+            if ( usersLoginName === "" ) {
                 alert("ログインIDを入力してください。");
                 return false;
             }
             var usersLoginPassword = document.inform.usersLoginPassword;
-            if ( usersLoginPassword == "" ) {
+            if ( usersLoginPassword === "" ) {
                 alert("パスワードを入力してください。");
                 return false;
             }
