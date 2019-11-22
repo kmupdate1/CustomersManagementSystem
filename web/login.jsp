@@ -37,7 +37,7 @@
             <h1>お客様情報管理システム<br>ログイン画面</h1>
         </div>
         <div style="color: red; font-weight: bold" align="center" >
-            <form action="/Presentation/FrontControllerServlet" method="post" name="inform">
+            <form action="Presentation/FrontControllerServlet" method="post" name="inform">
             <c:out value="${requestScope.message}" />
         </div>
             <input type="hidden" name="message" value="0" />
