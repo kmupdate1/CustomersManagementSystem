@@ -3,4 +3,26 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <display-name>jsp</display-name>
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>loginResult.jsp</welcome-file>
+        <welcome-file>logout.jsp</welcome-file>
+        <welcome-file>ResultCustomerView.jsp</welcome-file>
+        <welcome-file>SearchCustomerView.jsp</welcome-file>
+        <welcome-file>errorView</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>FrontControllerServlet</servlet-name>
+        <servlet-class>Presentation.FrontControllerServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FrontControllerServlet</servlet-name>
+        <url-pattern>/Presentation/FrontControllerServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
