@@ -14,7 +14,8 @@ public class UserLoginAction {
         String usersLoginPassword = request.getParameter("usersLoginPassword");
 
         if ( usersLoginName.equals("") || usersLoginPassword.equals("") ) {
-            request.setAttribute("message", "ログインIDまたはパスワードが間違っています。");
+            //request.setAttribute("message", "ログインIDまたはパスワードが間違っています。");
+            request.setAttribute("message", "ログインまたはパスワードが未入力です。");
             return page;
         }
 

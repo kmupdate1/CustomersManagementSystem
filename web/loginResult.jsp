@@ -13,6 +13,6 @@
     <title>ログイン結果</title>
 </head>
 <body>
-    <h1><c:out value="${sessionScope.usersName}" />さんがログイン中</h1>
+    <h1><c:out value="${sessionScope.users.usersName}" />さんがログイン中</h1>
 </body>
 </html>
