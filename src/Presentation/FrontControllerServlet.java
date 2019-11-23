@@ -39,7 +39,7 @@ public class FrontControllerServlet extends HttpServlet {
                 break;
 
             case "901_01_01":
-                page = "/errorView.jsp";
+                page = "/login.jsp";
                 break;
         }
 

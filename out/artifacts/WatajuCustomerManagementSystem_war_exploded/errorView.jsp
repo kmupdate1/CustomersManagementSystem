@@ -18,7 +18,7 @@
         </p>
     </div>
 
-    <form action="/FrontControllerServlet" method="post">
+    <form action="Presentation/FrontControllerServlet" method="post">
         <input type="hidden" name="BUTTON_ID" value="">
         <div align="center">
             <input type="button" value="ログイン画面へ"
